@@ -3,14 +3,14 @@ from constants import *
 
 def main():
     pygame.init() #initialize pygame
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) #create a GUI to display the game
+
     while True:
         #Stop the game if the GUI is closed
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-    
-        
-        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) #create a GUI to display the game
+            
         screen.fill("black")
         pygame.display.flip()
 
