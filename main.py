@@ -20,7 +20,6 @@ def main():
     asteroid_field = AsteroidField()
     clock = pygame.time.Clock()
     dt = 0
-    
 
     while True:
         #Stop the game if the GUI is closed
@@ -40,6 +39,11 @@ def main():
             if player.check_for_collision(item):
                 print("Game over!")
                 return
+        
+            for obj in shots:
+                if item.check_for_collision(obj):
+                    item.kill()
+                    obj.kill()
 
         dt = clock.tick(60) / 1000
         pygame.display.flip()
