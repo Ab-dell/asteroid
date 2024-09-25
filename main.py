@@ -42,7 +42,7 @@ def main():
         
             for obj in shots:
                 if item.check_for_collision(obj):
-                    item.kill()
+                    item.split()
                     obj.kill()
 
         dt = clock.tick(60) / 1000
